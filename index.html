@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mubariz Imanov — Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet" />
+    <!-- Fallback fonts if Clash Display not available -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ══════════════ HEADER ══════════════ -->
+    <header id="header">
+        <a href="#home" class="logo">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect width="28" height="28" rx="8" fill="var(--accent)" />
+                <text x="14" y="19" text-anchor="middle" fill="white" font-size="14" font-weight="700"
+                    font-family="Syne, sans-serif">M</text>
+            </svg>
+            <span>Mubariz</span>
+        </a>
+
+        <nav class="nav-desktop">
+            <a href="#about" class="nav-link">Haqqımda</a>
+            <a href="#certificates" class="nav-link">Sertifikatlar</a>
+            <a href="#contact" class="nav-link">Əlaqə</a>
+        </nav>
+
+        <a href="#contact" class="btn-header">İşləyək</a>
+
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mob-overlay" id="mobOverlay">
+        <nav class="mob-nav">
+            <a href="#about" class="mob-link" data-i="01">Haqqımda</a>
+            <a href="#certificates" class="mob-link" data-i="02">Sertifikatlar</a>
+            <a href="#contact" class="mob-link" data-i="03">Əlaqə</a>
+        </nav>
+    </div>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="home" class="hero">
+        <!-- Animated background -->
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="noise"></div>
+            <div class="grid"></div>
+        </div>
+
+        <div class="hero-inner">
+            <!-- Photo -->
+            <div class="hero-photo-wrap reveal">
+                <div class="photo-frame">
+                    <div class="frame-corner fc-tl"></div>
+                    <div class="frame-corner fc-tr"></div>
+                    <div class="frame-corner fc-bl"></div>
+                    <div class="frame-corner fc-br"></div>
+                    <img src="./img/seklim.jpg" alt="Mubariz Imanov" class="hero-photo"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Mubariz+Imanov&size=400&background=0a0f1e&color=4f8ef7&bold=true&font-size=0.28'" />
+                    <div class="photo-badge">
+                        <span class="badge-dot"></span>
+                        <span>Aktiv</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text -->
+            <div class="hero-text">
+                <div class="hero-eyebrow reveal">
+                    <span class="eyebrow-line"></span>
+                    Web Developer
+                </div>
+                <h1 class="hero-title">
+                    <span class="reveal reveal-d1">Mubariz</span>
+                    <span class="reveal reveal-d2 name-accent">Imanov</span>
+                </h1>
+                <div class="hero-role reveal reveal-d3">
+                    <span id="typewriter"></span><span class="tw-cursor">|</span>
+                </div>
+                <p class="hero-desc reveal reveal-d4">
+                    Müasir, responsiv və sürətli veb saytlar hazırlayıram.
+                    Front-end və back-end texnologiyalarını öyrənən full-stack
+                    developer olmağa doğru irəliləyirəm.
+                </p>
+                <div class="hero-actions reveal reveal-d5">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Əlaqə Saxla</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#about" class="btn btn-ghost">Haqqımda</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-cue">
+            <span>Aşağı</span>
+            <div class="scroll-line"></div>
+        </a>
+    </section>
+
+    <!-- ══════════════ HAQQIMDA ══════════════ -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">01 — Haqqımda</span>
+                <h2 class="section-title">Kim <em>olduğumu</em><br>öyrən</h2>
+            </div>
+
+            <div class="about-layout">
+                <!-- Left: text -->
+                <div class="about-left reveal">
+                    <p>Salam! Mən <strong>Mubariz Imanov</strong> — müasir veb texnologiyaları ilə maraqlanan bir
+                        developerəm.</p>
+                    <p>Veb inkişaf sahəsində həm <strong>front-end</strong>, həm də <strong>back-end</strong>
+                        texnologiyalarını öyrənirəm. Müasir və dinamik istifadəçi interfeysləri yaratmaq üçün xüsusilə
+                        React kitabxanasından istifadə edirəm.</p>
+                    <p>Yeni texnologiyaları öyrənmək, problemlərə effektiv həll yolları tapmaq və ideyaları real
+                        layihələrə çevirmək mənim əsas motivasiyamdır.</p>
+
+                    <div class="skill-chips">
+                        <span class="chip">HTML5</span>
+                        <span class="chip">CSS3</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">React</span>
+                        <span class="chip">Git</span>
+                        <span class="chip">GitHub</span>
+                        <span class="chip">Responsive</span>
+                        <span class="chip">UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- Right: cards -->
+                <div class="about-right">
+                    <div class="about-card reveal reveal-d1">
+                        <div class="card-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <rect x="2" y="3" width="18" height="14" rx="2" stroke="var(--accent)"
+                                    stroke-width="1.5" />
+                                <path d="M7 17l1.5 2h5L15 17" stroke="var(--accent)" stroke-width="1.5"
+                                    stroke-linejoin="round" />
+                                <path d="M6 8h10M6 11h7" stroke="var(--accent)" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3>Frontend Developer</h3>
+                        <p>Veb saytların görünüşünü və istifadəçi təcrübəsini HTML, CSS, JS və React ilə hazırlayıram.
+                        </p>
+                    </div>
+
+                    <div class="about-card reveal reveal-d2">
+                        <div class="card-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <circle cx="11" cy="11" r="9" stroke="var(--accent)" stroke-width="1.5" />
+                                <path d="M8 11l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>Problem Solving</h3>
+                        <p>Mürəkkəb problemlərə sadə, effektiv həllər tapıb real layihələrə çevirirəm.</p>
+                    </div>
+
+                    <div class="about-card reveal reveal-d3">
+                        <div class="card-icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                <path d="M11 2v4M11 16v4M2 11h4M16 11h4" stroke="var(--accent)" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="11" cy="11" r="4" stroke="var(--accent)" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <h3>Daim Öyrənən</h3>
+                        <p>Full-stack developer olmaq məqsədi ilə hər gün yeni texnologiyalar öyrənirəm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ SERTİFİKATLAR ══════════════ -->
+    <section id="certificates" class="section certs-section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">02 — Nailiyyətlər</span>
+                <h2 class="section-title">Mənim <em>sertifikatlarım</em></h2>
+            </div>
+
+            <div class="cert-list">
+                <!-- ─── SERTİFİKAT 3 ─── -->
+                <div class="cert-row reveal" data-delay="2">
+                    <div class="cert-num">1</div>
+                    <div class="cert-emoji">🥇</div>
+                    <div class="cert-info">
+                        <h3>Front-End</h3>
+                        <p class="cert-org">Coursera Socar</p>
+                        <p class="cert-desc">6 Aylig kurs</p>
+                    </div>
+                    <span class="cert-year">2026</span>
+                    <a href="./Sertifikatlar/Coursera Front-End.pdf" target="_blank" class="cert-btn">
+                        Bax
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ ƏLAQƏ ══════════════ -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">03 — Əlaqə</span>
+                <h2 class="section-title">Birgə <em>işləyək</em></h2>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-left reveal">
+                    <p class="contact-intro">Yeni layihələr, əməkdaşlıq və ya sadəcə salam demək üçün əlaqə saxlayın!
+                    </p>
+
+                    <div class="contact-links">
+                        <a href="mailto:imanlimubariz@gmail.com" class="contact-item">
+                            <div class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor"
+                                        stroke-width="1.4" />
+                                    <path d="M2 6l7 5 7-5" stroke="currentColor" stroke-width="1.4"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <span class="ci-label">Email</span>
+                                <span class="ci-value">imanlimubariz@gmail.com</span>
+                            </div>
+                            <svg class="ci-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+
+                        <a href="https://github.com/mubariz05" target="_blank" class="contact-item">
+                            <div class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <path
+                                        d="M9 2a7 7 0 00-2.21 13.64c.35.06.48-.15.48-.34v-1.3c-1.94.42-2.35-.94-2.35-.94-.32-.81-.78-1.02-.78-1.02-.64-.43.05-.42.05-.42.7.05 1.07.72 1.07.72.62 1.07 1.64.76 2.04.58.06-.45.24-.76.44-.93-1.55-.18-3.18-.78-3.18-3.45 0-.76.27-1.39.72-1.87-.07-.18-.31-.89.07-1.85 0 0 .59-.19 1.93.72A6.7 6.7 0 019 5.8c.6 0 1.2.08 1.76.23 1.34-.91 1.93-.72 1.93-.72.38.96.14 1.67.07 1.85.45.48.72 1.11.72 1.87 0 2.68-1.63 3.27-3.19 3.44.25.22.47.64.47 1.29v1.92c0 .19.13.41.48.34A7 7 0 009 2z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <span class="ci-label">GitHub</span>
+                                <span class="ci-value">github.com/mubariz05</span>
+                            </div>
+                            <svg class="ci-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/mubariz-imanov/" target="_blank" class="contact-item">
+                            <div class="ci-icon">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                    <rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor"
+                                        stroke-width="1.4" />
+                                    <path d="M6 8v4M6 6v.5M9 12V9.5A1.5 1.5 0 0112 9.5V12" stroke="currentColor"
+                                        stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="ci-text">
+                                <span class="ci-label">LinkedIn</span>
+                                <span class="ci-value">linkedin.com/in/mubariz-imanov</span>
+                            </div>
+                            <svg class="ci-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CV card -->
+                <div class="cv-card reveal reveal-d1">
+                    <div class="cv-bg-text">CV</div>
+                    <div class="cv-inner">
+                        <div class="cv-doc-icon">
+                            <svg width="40" height="48" viewBox="0 0 40 48" fill="none">
+                                <rect x="2" y="2" width="36" height="44" rx="4" stroke="var(--accent)"
+                                    stroke-width="1.5" />
+                                <path d="M10 14h20M10 20h20M10 26h14" stroke="var(--accent)" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <circle cx="30" cy="36" r="7" fill="var(--accent)" />
+                                <path d="M27 36l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3>CV-mi Yüklə</h3>
+                        <p>Ətraflı iş təcrübəsi və bacarıqlarım üçün CV-mi yükləyin.</p>
+                        <div class="cv-btns">
+                            <a href="./cv/Mubariz_İmanov.pdf" download class="btn btn-primary">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path d="M7.5 2v8M4 7l3.5 3.5L11 7" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M2 13h11" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <span>Yüklə</span>
+                            </a>
+                            <a href="./cv/Mubariz_İmanov.pdf" target="_blank" class="btn btn-ghost">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                                    <path d="M2 7.5C2 7.5 4.5 3 7.5 3S13 7.5 13 7.5 10.5 12 7.5 12 2 7.5 2 7.5z"
+                                        stroke="currentColor" stroke-width="1.4" />
+                                    <circle cx="7.5" cy="7.5" r="2" stroke="currentColor" stroke-width="1.4" />
+                                </svg>
+                                <span>Bax</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#home" class="footer-logo">
+                <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                    <rect width="28" height="28" rx="8" fill="var(--accent)" /><text x="14" y="19" text-anchor="middle"
+                        fill="white" font-size="14" font-weight="700" font-family="Syne, sans-serif">M</text>
+                </svg>
+                Mubariz Imanov
+            </a>
+            <p class="footer-copy">© 2025 Mubariz Imanov. Bütün hüquqlar qorunur.</p>
+            <a href="#home" class="back-top">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
