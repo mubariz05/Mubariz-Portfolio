@@ -1,44 +1,45 @@
 /* ══════════════════════════════════════════
-   CUSTOM CURSOR
+   CUSTOM CURSOR — yalnız mouse olan cihazlarda
 ══════════════════════════════════════════ */
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
+const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
-let mouseX = 0, mouseY = 0;
-let ringX = 0, ringY = 0;
+if (!isTouchDevice) {
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
 
-document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-});
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
 
-// Ring follows with lerp for smoothness
-function animateRing() {
-    ringX += (mouseX - ringX) * 0.14;
-    ringY += (mouseY - ringY) * 0.14;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
-    requestAnimationFrame(animateRing);
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.14;
+        ringY += (mouseY - ringY) * 0.14;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, .chip, .cert-row, .about-card, .contact-item').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+        cursorRing.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+        cursorRing.style.opacity = '1';
+    });
 }
-animateRing();
-
-// Hover effect on interactive elements
-document.querySelectorAll('a, button, .chip, .cert-row, .about-card, .contact-item').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-});
-
-// Hide cursor when leaving window
-document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-    cursorRing.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-    cursorRing.style.opacity = '1';
-});
 
 
 /* ══════════════════════════════════════════
@@ -125,7 +126,6 @@ const revealObs = new IntersectionObserver((entries) => {
         if (!entry.isIntersecting) return;
         const el = entry.target;
 
-        // cert-row stagger
         const row = el.closest('.cert-row');
         if (row && row.dataset.delay) {
             el.style.transitionDelay = `${Number(row.dataset.delay) * 0.1}s`;
@@ -176,6 +176,6 @@ document.querySelectorAll('.cert-row').forEach(row => {
 ══════════════════════════════════════════ */
 window.addEventListener('load', () => {
     document.querySelectorAll('.hero .reveal').forEach(el => {
-        // let IntersectionObserver handle it (hero is in viewport)
+        // IntersectionObserver handles it (hero is in viewport)
     });
 });

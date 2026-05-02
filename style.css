@@ -107,6 +107,20 @@ body.cursor-hover .cursor-ring {
     border-color: rgba(79, 142, 247, 0.8);
 }
 
+/* Touch / mobile cihazlarda custom cursor-u gizlət */
+@media (hover: none),
+(pointer: coarse) {
+
+    .cursor,
+    .cursor-ring {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+}
+
 /* ══════════════════════════════════════════
    HEADER
 ══════════════════════════════════════════ */
@@ -303,6 +317,14 @@ body.cursor-hover .cursor-ring {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.18);
     transform: translateY(-2px);
+}
+
+/* Touch cihazlarda düymələrdə normal cursor */
+@media (hover: none),
+(pointer: coarse) {
+    .btn {
+        cursor: pointer;
+    }
 }
 
 /* ══════════════════════════════════════════
